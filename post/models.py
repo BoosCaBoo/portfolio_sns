@@ -14,9 +14,12 @@ class Tag(models.Model):
 		max_length=20,
 	)
 
+	def __str__(self):
+		return self.name
+
 
 class Post(models.Model):
-	user_post = models.OneToOneField(
+	user_post = models.ForeignKey(
 		settings.AUTH_USER_MODEL,
 		related_name='user_post',
 		on_delete=models.CASCADE
