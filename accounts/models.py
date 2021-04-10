@@ -95,7 +95,7 @@ class Follow(models.Model):
 		related_name='follower',
 		on_delete=models.CASCADE,
 	)
-	created_on = models.DateTimeField(
+	created = models.DateTimeField(
 		auto_now_add=True,
 	)
 
