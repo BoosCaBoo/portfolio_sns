@@ -4,10 +4,11 @@ from .models import User, Profile, Follow
 
 
 class UserSerializer(serializers.ModelSerializer):
+	created = serializers.DateTimeField(format="%Y-%m-%d-%H-%M", read_only=True)
 
 	class Meta:
 		model = get_user_model()
-		fields = ('id', 'email', 'password')
+		fields = ('id', 'email', 'password', 'created')
 		extra_kwargs = {'password': {'write_only': True}}
 
 	def create(self, validated_data):
@@ -16,14 +17,16 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class ProfileSerializer(serializers.ModelSerializer):
+	created = serializers.DateTimeField(format="%Y-%m-%d-%H-%M", read_only=True)
 
 	class Meta:
 		model = Profile
-		fields = ('user', 'user_name', 'bio', 'avatar')
-		extra_kwargs = {'user': {'read_only': True}}
+		fields = ('user_profile', 'id', 'user_name', 'bio', 'avatar', 'created')
+		extra_kwargs = {'user_profile': {'read_only': True}}
 
 
 class FollowSerializer(serializers.ModelSerializer):
+	created = serializers.DateTimeField(format="%Y-%m-%d-%H-%M", read_only=True)
 
 	class Meta:
 		model = Follow

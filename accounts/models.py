@@ -7,7 +7,7 @@ import uuid
 
 def upload_to(instance, filename):
 	ext = filename.split('.')[-1]
-	return '/'.join(['accounts/', str[instance.user_name] + '.' + ext])
+	return '/'.join(['accounts', str(instance.user_name) + '.' + ext])
 
 
 class CustomUserManager(BaseUserManager):
@@ -33,15 +33,12 @@ class CustomUserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
 	id = models.UUIDField(
 		primary_key=True,
-		default=uuid.uuid4(),
+		default=uuid.uuid4,
 		editable=False,
 	)
 	email = models.EmailField(
 		max_length=50,
 		unique=True,
-	)
-	created = models.DateTimeField(
-		auto_now_add=True,
 	)
 	is_staff = models.BooleanField(
 		default=False,
@@ -59,10 +56,15 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 
 class Profile(models.Model):
-	user = models.OneToOneField(
+	user_profile = models.OneToOneField(
 		settings.AUTH_USER_MODEL,
-		related_name='user',
+		related_name='user_profile',
 		on_delete=models.CASCADE,
+	)
+	id = models.UUIDField(
+		primary_key=True,
+		default=uuid.uuid4,
+		editable=False,
 	)
 	user_name = models.CharField(
 		blank=False,
@@ -78,6 +80,9 @@ class Profile(models.Model):
 		blank=True,
 		null=True,
 		upload_to=upload_to,
+	)
+	created = models.DateTimeField(
+		auto_now_add=True,
 	)
 
 	def __str__(self):

@@ -6,12 +6,17 @@ import uuid
 
 def upload_to(instance, filename):
 	ext = filename.split('.')[-1]
-	return '/'.join(['post/{}'.format(instance.user.email), str[instance.body] + '.' + ext])
+	return '/'.join(['post/{}'.format(instance.user_post.id), str(instance.body) + '.' + ext])
 
 
 class Tag(models.Model):
 	name = models.CharField(
 		max_length=20,
+	)
+	id = models.UUIDField(
+		primary_key=True,
+		default=uuid.uuid4,
+		editable=False,
 	)
 
 	def __str__(self):
@@ -23,6 +28,11 @@ class Post(models.Model):
 		settings.AUTH_USER_MODEL,
 		related_name='user_post',
 		on_delete=models.CASCADE
+	)
+	id = models.UUIDField(
+		primary_key=True,
+		default=uuid.uuid4,
+		editable=False,
 	)
 	body = models.CharField(
 		max_length=150,
@@ -55,6 +65,11 @@ class Comment(models.Model):
 		settings.AUTH_USER_MODEL,
 		related_name='user_comment',
 		on_delete=models.CASCADE,
+	)
+	id = models.UUIDField(
+		primary_key=True,
+		default=uuid.uuid4,
+		editable=False,
 	)
 	post = models.ForeignKey(
 		Post,

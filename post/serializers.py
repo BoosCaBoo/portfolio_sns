@@ -11,14 +11,16 @@ class TagSerializer(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.ModelSerializer):
+	created = serializers.DateTimeField(format="%Y-%m-%d-%H-%M", read_only=True)
 
 	class Meta:
 		model = Post
 		fields = ('id', 'user_post', 'body', 'created', 'tags', 'image', 'liked')
-		extra_kwargs = {'user_post': {'read_only': True}, 'tags': {'read_only': True}}
+		extra_kwargs = {'user_post': {'read_only': True}}
 
 
 class CommentSerializer(serializers.ModelSerializer):
+	created = serializers.DateTimeField(format="%Y-%m-%d-%H-%M", read_only=True)
 
 	class Meta:
 		model = Comment
