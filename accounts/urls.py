@@ -11,5 +11,5 @@ router.register('follow', views.FollowViewSet)
 urlpatterns = [
 	path('', include(router.urls)),
 	path('create/', views.CreateUser, name="create"),
-	path('yourprofile/', views.YourProfile, name='yourprofile'),
+	path('yourProfile/', views.YourProfile, name='yourProfile'),
 ]

@@ -154,3 +154,7 @@ SIMPLE_JWT = {
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 MEDIA_URL = '/images/'
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+]
