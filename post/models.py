@@ -40,20 +40,18 @@ class Post(models.Model):
 	created = models.DateTimeField(
 		auto_now_add=True,
 	)
-	tags = models.ManyToManyField(
+	tags = models.ForeignKey(
 		Tag,
 		null=True,
-		blank=True
+		on_delete=models.CASCADE
 	)
 	image = models.ImageField(
-		blank=True,
-		null=True,
+		null=False,
 		upload_to=upload_to,
 	)
 	liked = models.ManyToManyField(
 		settings.AUTH_USER_MODEL,
 		related_name='liked',
-		blank=True,
 	)
 
 	def __str__(self):
