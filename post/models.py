@@ -43,6 +43,7 @@ class Post(models.Model):
 	tags = models.ForeignKey(
 		Tag,
 		null=True,
+		blank=True,
 		on_delete=models.CASCADE
 	)
 	image = models.ImageField(
