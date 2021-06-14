@@ -47,12 +47,14 @@ class Post(models.Model):
 		on_delete=models.CASCADE
 	)
 	image = models.ImageField(
-		null=False,
+		null=True,
+		blank=True,
 		upload_to=upload_to,
 	)
 	liked = models.ManyToManyField(
 		settings.AUTH_USER_MODEL,
 		related_name='liked',
+		blank=True,
 	)
 
 	def __str__(self):
