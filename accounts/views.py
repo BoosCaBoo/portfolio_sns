@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.db.models import Q
 from rest_framework import generics, viewsets, permissions, status
 from rest_framework.response import Response

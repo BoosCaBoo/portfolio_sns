@@ -11,7 +11,7 @@ class TagSerializer(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.ModelSerializer):
-	created = serializers.DateTimeField(format="%Y-%m-%d-%H-%M", read_only=True)
+	created = serializers.DateTimeField(format="%Y-%m-%d %H:%M", read_only=True)
 
 	class Meta:
 		model = Post
@@ -20,7 +20,7 @@ class PostSerializer(serializers.ModelSerializer):
 
 
 class CommentSerializer(serializers.ModelSerializer):
-	created = serializers.DateTimeField(format="%Y-%m-%d-%H-%M", read_only=True)
+	created = serializers.DateTimeField(format="%Y-%m-%d %H:%M", read_only=True)
 
 	class Meta:
 		model = Comment
