@@ -1,0 +1,51 @@
+asgiref==3.3.4
+boto3 @ file:///tmp/build/80754af9/boto3_1596429619850/work
+botocore @ file:///tmp/build/80754af9/botocore_1596109391930/work
+brotlipy==0.7.0
+certifi==2020.12.5
+cffi @ file:///opt/concourse/worker/volumes/live/ca3c0fea-9d0f-4489-6889-89b42078ed37/volume/cffi_1613246931142/work
+chardet==4.0.0
+coreapi==2.3.3
+coreschema==0.0.4
+cryptography @ file:///opt/concourse/worker/volumes/live/cdf8ff17-b0bf-4081-524c-b5a0afe929ba/volume/cryptography_1616769280208/work
+defusedxml==0.7.1
+dj-database-url==0.5.0
+Django==2.2.20
+django-cors-headers==3.4.0
+django-environ==0.4.5
+django-filter==2.4.0
+django-templated-mail==1.1.1
+djangorestframework==3.12.2
+djangorestframework-simplejwt==4.6.0
+djoser==2.1.0
+docutils @ file:///opt/concourse/worker/volumes/live/cc145bd9-e475-4b70-7ed1-917b6d7ad29d/volume/docutils_1613157700126/work
+gunicorn @ file:///opt/concourse/worker/volumes/live/2cfb47b9-50bb-4db5-4dac-477aaf34b20f/volume/gunicorn_1615981062201/work
+idna @ file:///tmp/build/80754af9/idna_1609784788857/work
+importlib-metadata==1.7.0
+itypes==1.2.0
+Jinja2==2.11.3
+jmespath @ file:///tmp/build/80754af9/jmespath_1594304593830/work
+MarkupSafe==1.1.1
+mysqlclient==2.0.3
+oauthlib==3.1.0
+olefile==0.46
+Pillow==8.2.0
+pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
+PyJWT==2.0.1
+PyMySQL==1.0.2
+pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1608057966937/work
+PySocks @ file:///opt/concourse/worker/volumes/live/ef943889-94fc-4539-798d-461c60b77804/volume/pysocks_1605305801690/work
+python-dateutil @ file:///home/ktietz/src/ci/python-dateutil_1611928101742/work
+python3-openid==3.2.0
+pytz==2021.1
+requests==2.25.1
+requests-oauthlib==1.3.0
+s3transfer==0.3.3
+six @ file:///opt/concourse/worker/volumes/live/f983ba11-c9fe-4dff-7ce7-d89b95b09771/volume/six_1605205318156/work
+social-auth-app-django==4.0.0
+social-auth-core==4.1.0
+sqlparse==0.4.1
+typing-extensions==3.7.4.3
+uritemplate==3.0.1
+urllib3==1.26.4
+zipp==3.4.1
